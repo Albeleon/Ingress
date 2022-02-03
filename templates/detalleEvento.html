@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{# Página de detalle de evento. Imprime los datos del evento y sus agentes asociados #}
+
+{% block content %}
+    <section>
+        <article>
+            <h2>Evento "{{ event.getNombre() }}"</h2>
+            <h3>Fecha: {{ event.getFecha() }}</h3>
+            <h3>Lugar: {{ event.getLugar() }}</h3>
+            <h3>Descripción:</h3>
+            <p>{{ event.getDescripcion() }}</p>
+            <h3>Lista de agentes asociados al evento:</h3>
+            <ul>
+                {% for agent in agents %}
+                    <li>{{ agent.getNombre() }}</li>
+                {% endfor %}
+            </ul>
+        </article>
+    </section>
+{% endblock %}                    

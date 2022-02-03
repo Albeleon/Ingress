@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{# Página de eventos. Imprime la lista de los eventos existentes #}
+
+{% block content %}
+    <section>
+        <article>
+            <h2>Eventos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Fecha</th>
+                        <th>Lugar</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for event in events %}
+                        <tr>
+                            <td><a href="/detalleEvento/{{ event.getId() }}">{{ event.getNombre() }}</a></td>
+                            <td>{{ event.getFecha() }}</td>
+                            <td>{{ event.getLugar() }}</td>
+                            <td>{{ event.getDescripcion() }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </article>
+    </section>
+{% endblock %}                    

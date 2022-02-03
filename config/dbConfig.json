@@ -1,0 +1,7 @@
+{
+    "server": "127.0.0.1",
+    "user": "root",
+    "password": "toor",
+    "dbname": "ingress_mvc_doctrine",
+    "driver" : "pdo_mysql"
+}

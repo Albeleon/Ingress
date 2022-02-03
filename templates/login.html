@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{# Página de login. Imprime un error si se le pasa como valor "true" la variable error #}
+
+{% block content %}               
+    <section>
+        {% if error == true %}
+            <article>
+                <p>Error: El usuario o contraseña no son correctos.</p>
+            </article>
+        {% endif %}
+        <article>
+            <h2>Login</h2>
+            <form action="/loginProcess" method="post">
+                <label for="user">Usuario</label>
+                <input id="user" name="user" type="text">
+                <label for="pass">Contraseña</label>
+                <input id="pass" name="pass" type="password">
+                <input type="submit" value="Login">
+            </form>
+        </article>
+    </section>
+{% endblock %}     

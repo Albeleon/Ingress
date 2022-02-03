@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{# Página de perfil. Imprime los datos del usuario, junto a la diferencia de estadísticas tras cada evento #}
+
+{% block content %}
+    <section>
+        <article>
+            <h2>Perfil de {{ dataUser.getNombre() }}:</h2>
+            <h3>Facción: {{ dataUser.getFaccion() }}</h3>
+            <h3>Aumento o disminución de estadísticas tras eventos:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Evento</th>
+                        <th>Lifetime AP</th>
+                        <th>Unique Portals Visited</th>
+                        <th>Resonators Deployed</th>
+                        <th>Links Created</th>
+                        <th>Control Fields Created</th>
+                        <th>XM Recharged</th>
+                        <th>Portals Captured</th>
+                        <th>Hacks</th>
+                        <th>Resonators Deployed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pairStatsEvents in arrayStatsEvents %}
+                        <tr>
+                            <td>{{ pairStatsEvents[0].getEvento().getNombre() }}</td>
+                            <td>{{ pairStatsEvents[1].getLifetimeAp() - pairStatsEvents[0].getLifetimeAp() }}</td>
+                            <td>{{ pairStatsEvents[1].getUniquePortalsVisited() - pairStatsEvents[0].getUniquePortalsVisited() }}</td>
+                            <td>{{ pairStatsEvents[1].getResonatorsDeployed() - pairStatsEvents[0].getResonatorsDeployed() }}</td>
+                            <td>{{ pairStatsEvents[1].getLinksCreated() - pairStatsEvents[0].getLinksCreated() }}</td>
+                            <td>{{ pairStatsEvents[1].getControlFieldsCreated() - pairStatsEvents[0].getControlFieldsCreated() }}</td>
+                            <td>{{ pairStatsEvents[1].getXmRecharged() - pairStatsEvents[0].getXmRecharged() }}</td>
+                            <td>{{ pairStatsEvents[1].getPortalsCaptured() - pairStatsEvents[0].getPortalsCaptured() }}</td>
+                            <td>{{ pairStatsEvents[1].getHacks() - pairStatsEvents[0].getHacks() }}</td>
+                            <td>{{ pairStatsEvents[1].getResonatorsDestroyed() - pairStatsEvents[0].getResonatorsDestroyed() }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+        </article>
+    </section>
+{% endblock %}                    

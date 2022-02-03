@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{# Página de comparar estadísticas. Deja seleccionar un parámetro por el que comparar las estadísticas, e imprime el ranking descendente #}
+
+{% block content %}               
+    <section>
+        <article>
+            <h2>Mejores usuarios</h2>
+            <form action="/mejoresUsuarios" method="post">
+                <select name="comparador" id="comparador">
+                    {% for comparador in comparadores %}
+                        <option value="{{ comparador }}">{{ comparador }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Buscar">
+            </form>
+        </article>
+        <article>
+            <h3>Ranking de usuarios según "{{ comparadorActual }}":</h3>
+            <ol>
+                {% for user in users %}
+                    <li>{{ user.name }} ({{ user.mainValue }})</li>
+                {% endfor %}
+            </ol>
+        </article>
+    </section>
+{% endblock %}     

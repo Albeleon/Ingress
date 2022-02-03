@@ -1,0 +1,50 @@
+{
+    "/": {
+        "controller": "MainController",
+        "action": "boot"
+    },
+    "/login": {
+        "controller": "LoginController",
+        "action": "boot"
+    },
+    "/loginProcess": {
+        "controller": "LoginProcessController",
+        "action": "boot"
+    },
+    "/registro": {
+        "controller": "RegistroController",
+        "action": "boot"
+    },
+    "/registroProcess": {
+        "controller": "RegistroProcessController",
+        "action": "boot"
+    },
+    "/logout": {
+        "controller": "LogoutController",
+        "action": "boot"
+    },
+    "/perfil": {
+        "controller": "PerfilController",
+        "action": "boot"
+    },
+    "/subirEstadisticas": {
+        "controller": "SubirEstadisticasController",
+        "action": "boot"
+    },
+    "/subirEstadisticasProcess": {
+        "controller": "SubirEstadisticasProcessController",
+        "action": "boot"
+    },
+    "/mejoresUsuarios": {
+        "controller": "MejoresUsuariosController",
+        "action": "boot"
+    },
+    "/eventos": {
+        "controller": "EventosController",
+        "action": "boot"
+    },
+    "/detalleEvento": {
+        "controller": "DetalleEventoController",
+        "action": "boot"
+    }
+}

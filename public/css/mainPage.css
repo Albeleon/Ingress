@@ -1,0 +1,42 @@
+body {
+    background-color: #7A7;
+    width: 800px;
+    margin: auto;
+}
+
+#mainbody {
+    background-color: #BDF;
+    margin: 20px 0px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+nav {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.mainfloat {
+    overflow: auto;
+}
+
+.partfloat {
+    float: left;
+}
+
+section {
+    margin-top: 20px;
+}
+
+table {
+    border: 2px solid black;
+}
+
+th, td {
+    border: 1px solid black;
+}

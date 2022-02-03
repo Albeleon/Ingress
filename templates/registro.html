@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{# Página de registro. Imprime un error si se le pasa como valor "true" la variable error #}
+
+{% block content %}
+    <section>
+        {% if error == true %}
+            <article>
+                <p>Error: Ya existe ese usuario.</p>
+            </article>
+        {% endif %}
+        <article>
+            <h2>Registro</h2>
+            <form action="/registroProcess" method="post">
+                <label for="user">Usuario</label>
+                <input id="user" name="user" type="text">
+                <label for="pass">Contraseña</label>
+                <input id="pass" name="pass" type="password">
+                <label for="faccion">Facción</label>
+                <input id="faccion" name="faccion" type="text">
+                <input type="submit" value="Registro">
+            </form>
+        </article>
+    </section>
+{% endblock %}                    

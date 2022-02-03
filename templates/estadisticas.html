@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{# Página de subir estadísticas. Imprime un error o mensaje de éxito si se le pasa como valor "true" una de las variables #}
+
+{% block content %}               
+    <section>
+        {% if error == true %}
+            <article>
+                <p>Error: El usuario o contraseña no son correctos.</p>
+            </article>
+        {% endif %}
+        {% if success == true %}
+            <article>
+                <p>Los datos se han subido correctamente.</p>
+            </article>
+        {% endif %}
+        <article>
+            <h2>Subir estadísticas</h2>
+            <p>Inserte aquí las estadísticas a integrar.</p>
+            <form action="/subirEstadisticasProcess" method="post">
+                <textarea id="estadistica" name="estadistica" id="" cols="90" rows="20"></textarea>
+                <input type="submit" value="Subir">
+            </form>
+        </article>
+    </section>
+{% endblock %}     
